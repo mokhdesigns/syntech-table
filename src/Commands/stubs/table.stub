@@ -1,0 +1,25 @@
+<?php
+
+namespace App\SyntechTable;
+
+use SyntechTable\SyntechBase;
+
+class DummyTable extends SyntechBase
+{
+    protected $model = '';  // Specify the model class
+    protected $route = '';  // Specify the route name
+
+    protected function getColumns()
+    {
+        return [
+            $this->makeColumn('id', __('ID'), true, true, true, false),
+            $this->makeColumn('name', __('Name'), true, true, true, true, 'htmlCellRenderer'),
+            // Add more columns as needed
+        ];
+    }
+
+    public function columns($dataTable)
+    {
+        return $this->editColumns($dataTable, []);
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "name": "syntech/syntechtable",
+    "description": "A package to manage Syntech tables.",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0",
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Syntech\\Syntechtable\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "syntech"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+               "Syntech\\SyntechTable\\Providers\\SyntechTableServiceProvider"
+            ]
+        }
+    },
+    "require": {}
+}
