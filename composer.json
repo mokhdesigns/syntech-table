@@ -3,7 +3,7 @@
     "description": "A package to manage Syntech tables.",
     "type": "library",
     "license": "MIT",
-    "version": "1.0",
+    "version": "1.2",
     "prefer-stable": true,
     "minimum-stability": "dev",
     "autoload": {
@@ -19,7 +19,7 @@
     "extra": {
         "laravel": {
             "providers": [
-               "Syntech\\SyntechTable\\Providers\\SyntechTableServiceProvider"
+               "Syntech\\Syntechtable\\Providers\\SyntechTableServiceProvider"
             ]
         }
     },

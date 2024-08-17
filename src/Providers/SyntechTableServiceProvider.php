@@ -1,27 +1,36 @@
 <?php
 
-namespace Syntech\SyntechTable\Providers;
+namespace Syntech\Syntechtable\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use SyntechTable\Commands\MakeTableCommand;
+use Syntech\Syntechtable\Console\Commands\MakeTableCommand;
 
 class SyntechTableServiceProvider extends ServiceProvider
 {
-    public function boot()
-    {
-        if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__ . '/../config/syntechtable.php' => config_path('syntechtable.php'),
-            ], 'config');
-
-            $this->commands([
-                MakeTableCommand::class,
-            ]);
-        }
-    }
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/syntechtable.php', 'syntechtable');
+        $this->app->singleton('command.syntechtable.make', function () {
+            return new MakeTableCommand();
+        });
+
+        $this->commands([
+            'command.syntechtable.make',
+        ]);
+
+        $this->mergeConfigFrom(
+            __DIR__ . '/../../config/syntechtable.php', 'syntechtable'
+        );
+
     }
+
+
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__ . '/../../config/syntechtable.php' => config_path('syntechtable.php'),
+        ], 'config');
+    }
+
+
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\SyntechTable;
+namespace DummyNamespace;
 
-use SyntechTable\SyntechBase;
+use Syntech\Syntechtable\SyntechBase;
 
-class DummyTable extends SyntechBase
+class DummyClass extends SyntechBase
 {
     protected $model = '';  // Specify the model class
     protected $route = '';  // Specify the route name
@@ -20,6 +20,8 @@ class DummyTable extends SyntechBase
 
     public function columns($dataTable)
     {
-        return $this->editColumns($dataTable, []);
+        return $this->editColumns($dataTable, [
+             // Column Value edit
+        ]);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace  Syntech\SyntechTable\SyntechTable;
+namespace Syntech\Syntechtable;
 
 use Illuminate\Support\Facades\Route;
 
@@ -127,7 +127,16 @@ class SyntechBase
             'print' => __('Print'),
         ]);
 
-        return '
+        $main_script = '
+
+        <link rel="stylesheet" href="https://www.cdn.jsdelivr.net/npm/ag-grid-community/dist/styles/ag-grid.css">
+        <link rel="stylesheet" href="https://www.cdn.jsdelivr.net/npm/ag-grid-community/dist/styles/ag-theme-quartz.css">
+        <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.21/jspdf.plugin.autotable.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.21/jspdf.plugin.autotable.min.js"></script>';
+
+      $table_script =  '
         <script>
         let gridApi;
 
@@ -219,5 +228,7 @@ class SyntechBase
         });
         </script>
         ';
+
+        return $main_script . $table_script;
     }
 }
