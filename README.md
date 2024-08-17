@@ -2,6 +2,8 @@
 
 `SyntechTable` is a Laravel package for managing dynamic and customizable data tables with ease. This package is built on top of [AG Grid](https://github.com/ag-grid/ag-grid), a powerful and flexible data grid library.
 
+![syntechtable](images/syntechtable.png)
+
 ## Installation
 
 To install the package, run:
