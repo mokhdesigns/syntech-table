@@ -12,8 +12,8 @@ To install the package, run:
 composer require syntech/syntechtable
 ```
 
-##Usage
-##Creating a New Table
+## Usage
+## Creating a New Table
 
 To create a new table, use the Artisan command:
 
